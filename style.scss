@@ -1,0 +1,769 @@
+@import 'colors';
+@import 'fonts';
+
+
+* {
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+}
+
+
+
+
+//Mensaje de arriba
+.banner {
+    color: white;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: capitalize;
+    text-align: center;
+
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+
+    p {
+        text-align: center;
+        font-size: 14px;
+        font-weight: 600;
+        font-family: $font-family;
+        margin-top: 14px;
+
+    }
+}
+
+//Fin mensaje de arriba
+
+//Comienzo del Navbar en formato nesting con Menu hamburguesa//
+.navbar {
+
+    height: 75px;
+    justify-content: center;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    background-color: white;
+    width: 100%;
+    top: 28px;
+    z-index: 9999;
+
+
+
+
+
+
+    .menu-btn {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        block-size: 25px;
+        transition: all .5s ease-in-out;
+
+
+
+        .menu-btn-burger {
+            width: 25px;
+            height: 2px;
+            background: #000000;
+            transition: all .5s ease-in-out;
+
+            &::before {
+                content: "";
+                position: absolute;
+                width: 25px;
+                height: 2px;
+                background: #000000;
+                transition: all .5s ease-in-out;
+
+            }
+
+
+            &::after {
+                content: "";
+                position: absolute;
+                width: 25px;
+                height: 2px;
+                background: #000000;
+                transition: all .5s ease-in-out;
+            }
+
+            &::before {
+                transform: translateY(-8px);
+            }
+
+            &::after {
+                transform: translateY(8px);
+            }
+
+        }
+
+    }
+
+
+}
+
+
+
+//Fin del Navbar en formato nesting con Menu hamburguesa//
+//Esto va por separado del nesting asi me lee el Js, creo yo, funciona.//
+.menu-btn.open .menu-btn-burger {
+    transform: translateX(-50px);
+    background: transparent;
+    box-shadow: none;
+
+}
+
+.menu-btn.open .menu-btn-burger::before {
+    transform: rotate(45deg) translate(35px, -35px);
+
+}
+
+.menu-btn.open .menu-btn-burger::after {
+    transform: rotate(-45deg) translate(35px, 35px);
+
+}
+
+
+//Fin del Navbar y Js del menu//
+
+
+//Comienzo del Dropdown menu
+
+#toggle {
+    display: none;
+}
+
+.menu-escondido {
+    visibility: hidden;
+}
+
+
+
+.nav {
+    position: fixed;
+    background-color: white;
+    z-index: 1;
+    left: 0;
+    top: 104px;
+}
+
+#toggle:checked+.menu-escondido {
+    visibility: visible;
+}
+
+
+
+#carouselExampleIndicators {
+    top: 103px;
+}
+
+
+
+
+
+
+
+//Fin del Dropdown menu
+
+
+//Comienzo de los articulos con overlay//
+.container-fluid {
+
+
+    .row {
+
+        a {
+
+
+
+
+            .articulo1 {
+                position: relative;
+                transition: all .5s ease;
+
+                //esto le aplica el efecto a la foto 1
+                &:hover {
+                    transform: scale(1.1);
+                    filter: opacity(80%);
+                    transition: all .5s ease;
+                }
+            }
+
+            .articulo2 {
+                position: relative;
+                transition: all .5s ease;
+
+                //esto le aplica el efecto a la foto 2
+                &:hover {
+                    transform: scale(1.1);
+                    filter: opacity(80%);
+                    transition: all .5s ease;
+                }
+            }
+
+            .articulo3 {
+                position: relative;
+                transition: all .5s ease;
+
+                //esto le aplica el efecto a la foto 3
+                &:hover {
+                    transform: scale(1.1);
+                    filter: opacity(80%);
+                    transition: all .5s ease;
+                }
+            }
+
+            .articulo4 {
+                position: relative;
+                transition: all .5s ease;
+
+                //esto le aplica el efecto a la foto 4
+                &:hover {
+                    transform: scale(1.1);
+                    filter: opacity(80%);
+                    transition: all .5s ease;
+                }
+            }
+
+
+        }
+
+    }
+}
+
+//Fin de los articulos con overlay//
+
+
+.card-group {
+    overflow: hidden;
+
+    .card {
+        overflow: hidden;
+
+
+        .card-body {
+            overflow: hidden;
+
+            .card-text {
+                position: absolute;
+                z-index: 1;
+
+            }
+
+
+
+
+            .card-img-top {
+
+                position: relative;
+                transition: all .5s ease;
+                z-index: 0;
+
+                //esto le aplica el efecto a la foto 1
+                &:hover {
+                    transform: scale(1.1);
+                    filter: opacity(80%);
+                    transition: all .5s ease;
+
+                }
+
+            }
+
+        }
+    }
+}
+
+
+//Comienzo mitad/mitad
+.leftside,
+.rightside {
+
+    height: 65vh;
+    width: 100%;
+    overflow: hidden;
+
+    transition: all .5s ease-in-out;
+
+    &:hover p {
+        visibility: visible;
+        transition: all .2s ease-in-out;
+        transform: scale(1.5);
+
+    }
+
+    h1 {
+        position: absolute;
+        z-index: 1;
+
+
+    }
+
+    p {
+        visibility: hidden;
+        position: absolute;
+        z-index: 1;
+        top: 15%;
+        left: 4.3%;
+
+
+
+    }
+
+    img {
+        position: relative;
+        transition: all .5s ease;
+        z-index: 0;
+        bottom: 300px;
+
+
+
+        &:hover {
+            transform: scale(1.1);
+            filter: opacity(80%);
+            transition: all .5s ease;
+
+        }
+    }
+}
+
+
+//Fin mitad/mitad 
+
+
+//Comienzo iconos de beneficios//
+.container {
+    margin: 100px 0px;
+
+
+
+    .row {
+
+
+
+        h5 {
+            color: black;
+            margin-top: 5px;
+        }
+
+        p {
+            color: black;
+
+        }
+    }
+}
+
+//Fin iconos de beneficios//
+
+
+//Titulos nuevos que dividen la pantalla//
+.separador {
+    text-align: center;
+    margin-top: 115px;
+
+
+    h1 {
+        margin: 0%;
+    }
+}
+
+//Fin Titulos nuevos//
+
+
+//Comienzo de los estilos para Carrito.html//
+.container-carrito {
+    margin-top: 40px;
+    text-align: center;
+    color: white;
+
+    .centered {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: black;
+        font-size: 16px;
+
+    }
+
+    .emptyroom {
+        filter: opacity(50%);
+    }
+}
+
+//Fin de los estilos para Carrito.html//
+
+
+//Newsletter//
+
+.container {
+
+    h1 {
+        color: black;
+        margin-bottom: 20px;
+    }
+
+}
+
+//Pagina de ARTICULOS 
+.container-articulo-desktop {
+
+    margin-top: 103px;
+
+    .row {
+
+        overflow: hidden;
+
+
+        .foto {
+            position: relative;
+            left: 25%;
+        }
+
+
+
+        .newarrival {
+            background-color: rgba(226, 152, 32, 0.733);
+            width: 50px;
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
+            left: 0%;
+        }
+
+        input {
+            margin-top: 25px;
+            width: 20px;
+            border: 1px solid black;
+            text-align: center;
+            font-size: 12px;
+
+        }
+
+        label {
+            font-size: 12px;
+
+        }
+
+        button {
+
+            position: relative;
+            border-radius: 0;
+            padding: 10px;
+            margin-top: 330px;
+            width: 100%;
+
+            p {
+                font-size: 12px;
+                font-weight: bold;
+            }
+        }
+
+        .info {
+
+            padding-top: 50px;
+            font-size: 12px;
+            font-weight: normal;
+
+            .titulo {
+                font-size: 14px;
+            }
+        }
+
+    }
+}
+
+
+
+.carousel-control-next,
+.carousel-control-prev
+
+/*, .carousel-indicators */
+    {
+    filter: invert(100%);
+}
+
+.separador2 {
+    margin-top: 80px;
+    margin-bottom: 25px;
+
+    text-align: center;
+
+
+    h1 {
+        margin: 0%;
+    }
+
+}
+
+//Footer
+
+.container-footer {
+    margin: 0%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//Medias querry
+
+@media screen and (min-width: 951px) {
+    .beneficios-app {
+        display: none;
+    }
+
+    .container-articulo-app {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 950px) {
+
+
+    .separador {
+        position: relative;
+        background-color: white;
+        top: 120px;
+    }
+
+    .separador2 {
+        margin-top: 200px;
+        margin-bottom: 0%;
+        text-align: center;
+
+        h1 {
+            font-size: 20px;
+
+        }
+
+        p {
+            margin: 0%;
+            font-size: 12px;
+        }
+
+
+    }
+
+    .separador3 {
+        text-align: center;
+        margin-top: 50px;
+        margin-bottom: 2%;
+
+        h1 {
+            font-size: 20px;
+        }
+    }
+
+    .card-group {
+        margin-top: 125px;
+    }
+
+    .secundario {
+        margin-top: 2%;
+    }
+
+    .espacio {
+        margin-top: 0%;
+    }
+
+
+    .beneficios-desktop {
+        display: none;
+    }
+
+    .beneficios-app {
+        margin: 0%;
+    }
+
+    .carousel-indicators {
+        top: 160px;
+
+    }
+
+
+
+    .container-fluid {
+
+        .row {
+
+            a {
+                width: 50%;
+            }
+
+            .mitad {
+                width: 50%;
+                height: 450px;
+            }
+        }
+    }
+
+    .container {
+        margin-top: 100px;
+
+        h1 {
+            color: black;
+            margin-bottom: 15px;
+            font-size: 24px;
+        }
+
+    }
+
+    .separador {
+        height: 45px;
+        margin: 0%;
+
+        h1 {
+            font-size: 20px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+
+
+        }
+
+        p {
+            font-size: 14px;
+            text-align: center;
+        }
+    }
+
+
+
+}
+
+
+@media screen and (max-width: 950px) {
+
+    .leftside,
+    .rightside {
+
+        &:hover p {
+            visibility: hidden;
+        }
+
+        height: 25vh;
+
+        img {
+            position: relative;
+            transition: all .5s ease;
+            z-index: 0;
+            bottom: 150px;
+
+            p {
+                display: none;
+                visibility: hidden;
+            }
+
+
+        }
+
+        h1 {
+            font-size: 24px;
+        }
+    }
+}
+
+
+
+
+
+
+@media screen and (max-width: 950px) {
+    .container-articulo-desktop {
+        display: none;
+    }
+
+
+    .container-articulo-app {
+        margin-top: 103px;
+        width: 100%;
+
+        .row {
+
+            overflow: hidden;
+
+
+            .foto {
+                position: relative;
+                left: 25%;
+            }
+
+            .titulo-articulo {
+                font-size: 24px;
+            }
+
+
+
+
+
+
+
+            .newarrival {
+                background-color: rgba(226, 152, 32, 0.733);
+                width: 50px;
+                color: white;
+                font-size: 12px;
+                font-weight: bold;
+                left: 0%;
+            }
+
+            input {
+
+                width: 20px;
+                border: 1px solid black;
+                text-align: center;
+                font-size: 12px;
+
+            }
+
+            label {
+                font-size: 12px;
+
+            }
+
+            button {
+                border-radius: 0;
+                padding: 10px;
+                margin-top: 29px;
+                width: 100%;
+
+
+
+                p {
+                    font-size: 12px;
+                    font-weight: bold;
+                }
+            }
+
+            .info {
+
+
+                font-size: 12px;
+                font-weight: normal;
+
+                .titulo {
+                    font-size: 14px;
+                }
+            }
+
+        }
+    }
+}
